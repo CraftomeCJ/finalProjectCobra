@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Google style-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+
+    <!---------Navigation bar------------>
+    <div th:insert="fragments/navbar.html :: navbar"></div>
+    <!-----------Contact Us-------------->
+    <div th:insert="fragments/navbar.html :: menuModal"></div>
+
+    
+    <!---------Login Form---------------->
+    <div class="container">
+        <div class="col-login">
+            <img src="images/kisspng-computer-icons-user-symbol-light-client-icon-5b5cfd0c13c0f4.2472397915328207480809.png" class="loginLogo">
+            <h1 class="h1">Login</h1>
+            <div class="row">
+                <label class="form-label errorMessage" id="errorsMessage">Invalid Username or password</label>
+            </div>
+            <form onsubmit="event.preventDefault(); loginSubmit()" autocomplete="off">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputUserDefault"><img src="images/baseline_person_black_24dp.png" class="userLogo"></span>
+                    <input type="text" class="form-control" id="username" aria-label="Sizing example input" aria-describedby="inputUserDefault"placeholder="usename" >
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputPasswordDefault"><img src="images/baseline_vpn_key_black_24dp.png" class="passLogo"></span>
+                    <input type="password" class="form-control" id="password" aria-label="Sizing example input" aria-describedby="inputPasswordDefault" placeholder="password">
+                </div>
+                <div class="row">
+                    <div class="col col-submit  d-grid gap-2 col-8 mx-auto" >
+                        <input class="btn btn-submit" type="submit" value="Login">
+                    </div>
+                </div>
+            </form>        
+        </div>
+    </div>
+
+    <!-----------Footer------------------>
+    <div th:insert="fragments/footer.html :: footer"></div>
+
+    <!---Java Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="Js/login.js"></script>
+    <script src="Js/contactUs.js"></script>
+    <script src="Js/emptychecking.js"></script>
+</body>
+</html>
