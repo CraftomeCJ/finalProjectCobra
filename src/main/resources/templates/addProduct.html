@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/addProduct.css">
+    <title>Add Product</title>
+</head>
+<body>
+    <!---------Navigation bar------------>
+    <div th:insert="fragments/navbar.html :: navbar"></div>
+    <!-----------Contact Us-------------->
+    <div th:insert="fragments/navbar.html :: menuModal"></div>
+    
+    <!-----------Product Form------------>
+    <div class="add-product-body">
+        <div class="container">
+            <div class="row">
+                <div class="col col-header col-lg-12 ">
+                    <h1>Add Product</h1>
+                </div>
+            </div>
+            <form onsubmit="event.preventDefault(); submitForm()" autocomplete="off"  enctype="multipart/form-data">
+                <div class="row ">
+                    <div class="col-lg-6">
+                        <div class="add-product">
+                            <label for="productName" class="form-label">Product Name *</label>
+                            <input type="text" class="form-control" id="productName" />
+                        </div>
+                        <div class="add-product">
+                            <label for="productCharacter" class="form-label">Character *</label>
+                            <select class="form-select form-control" id="productCharacter">
+                                <!-- Dropdown List read from javaScript -->                              
+                            </select>
+                            <div class = "addDelete ">
+                                <a id="btnAddNewCharacter" class="nav-link" data-bs-toggle="modal" data-bs-target="#addDeleteCharacter">Add </a>
+                                <a id="btnDeleteCharacter" class="nav-link" data-bs-toggle="modal" data-bs-target="#addDeleteCharacter">Delete </a>
+                            </div>
+                        </div>
+                        <div class="add-product">
+                            <label for="productColor" class="form-label">Color *</label>
+                            <select class="form-select form-control" id="productColor">
+                                <!-- Dropdown List read from javaScript -->        
+                            </select>
+                            <div class = "addDelete ">
+                                <a id="btnAddNewColor" class="nav-link " data-bs-toggle="modal" data-bs-target="#addDeleteColor">Add </a>
+                                <a id="btnDeleteColor" class="nav-link " data-bs-toggle="modal" data-bs-target="#addDeleteColor">Delete </a>
+                            </div>
+                        </div>
+                        <div class="add-product">
+                            <label for="productDesc" class="form-label">Product Description *</label>
+                            <textarea class="form-control" id="productDesc" rows="3" ></textarea>
+                        </div>
+                        <div class="add-product ">
+                            <label for="productPrice" class="form-label">Price SGD *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"id="productPrice" />
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="add-product">
+                            <label for="productImage" class="form-label">Upload Image</label>
+                            <input class="form-control" type="file" id="productImage" onchange="loadFile(event)"/>
+                        </div>
+                        <div class="display">
+                            <img src="images/cobra-logos_transparent.png" class="img-fluid" id="imageDisplay" alt="...">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col  d-flex justify-content-center" >
+                        <input class="btn btn-outline-success" type="submit" value="Submit">
+                        <input class="btn btn-outline-secondary" type="reset" value="Reset" onclick="resetForm()">
+                    </div>
+                </div>  
+            </form>      
+        </div>
+    </div>
+
+    <!-----------Add Character------------------>
+    <div class="modal addDeleteCharacter" id="addDeleteCharacter"  tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form onsubmit="event.preventDefault(); submitCharacterForm()" autocomplete="off">
+                    <div class="modal-header">
+                        <p id="addDeleteCharacterHeader"></p>
+                    </div>
+                    <div class="modal-body" id="addNewCharacter">
+                        <label for="newCharacterName" class="form-label">Enter New Character</label>
+                        <input type="text" class="form-control" id="newCharacterName" />
+                    </div>
+                    <div class="modal-body" id="deleteCharacter">
+                        <label for="deleteCharacterName" class="form-label">Select A Character To Delete</label>
+                        <select class="form-select form-control" id="deleteCharacterName">
+                            <!-- Dropdown List read from javaScript -->
+                        </select>
+                        <p class="characterErrorMassage" id="characterErrorMassage"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button id="addNewCharacterClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-----------Add Color------------------>
+    <div class="modal addDeleteColor" id="addDeleteColor"  tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form onsubmit="event.preventDefault(); submitColorForm()" autocomplete="off">
+                    <div class="modal-header">
+                        <p id="addDeleteColorHeader"></p>
+                    </div>
+                    <div class="modal-body" id="addNewColor">
+                        <label for="newColorName" class="form-label">Enter New Color</label>
+                        <input type="text" class="form-control" id="newColorName" />
+                    </div>
+                    <div class="modal-body" id="deleteColor">
+                        <label for="deleteColorName" class="form-label">Select A Color To Delete</label>
+                        <select class="form-select form-control" id="deleteColorName">
+                            <!-- Dropdown List read from javaScript -->
+                        </select>
+                        <p class="colorErrorMassage" id="colorErrorMassage"></p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button id="addNewColorClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-----------Footer------------------>
+    <div th:insert="fragments/footer.html :: footer"></div>
+
+    <!---Java Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="Js/controller/productController.js"></script>
+    <script src="Js/controller/characterController.js"></script>
+    <script src="Js/controller/colorController.js"></script>
+    <script src="Js/product/addProduct.js"></script>
+    <script src="Js/character/addCharacter.js"></script>
+    <script src="Js/color/addColor.js"></script>
+    <script src="Js/character/characterListing.js"></script>
+    <script src="Js/color/colorListing.js"></script>
+    <script src="Js/contactUs.js"></script>
+    <script src="Js/emptychecking.js"></script>
+
+
+
+</body>
+</html>

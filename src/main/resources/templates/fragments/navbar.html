@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar navbar-custom navbar-expand-lg navbar-light bg-gradient p-0 top-0 sticky-top" >
+    <div class="container-fluid container-fluid-custom" >
+        <a class="navbar-brand-img" href="#">
+            <img src="images/cobra-logos_black.png" alt="">
+        </a>
+        <a class="navbar-brand navbar-brand-custom" href="#">
+            <span class="navbar-brandname-custom">COBRA</span>
+        </a>
+        <button class="navbar-toggler navbar-toggler-custom collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon toggler-icon-custom top-bar"></span>
+            <span class="toggler-icon toggler-icon-custom middle-bar"></span>
+            <span class="toggler-icon toggler-icon-custom bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse collapse-custom navbar-collapse-custom" id="navbarSupportedContent">
+            <form class="d-flex d-flex-custom">
+                <input class="form-control form-control-custom navbar-search-custom me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav navbar-nav-custom">
+                <li class="nav-item">
+                    <a class="nav-link  nav-link-custom" id="navHome" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom" id="navAboutUs" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom" id="navShop" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom" id="navContactUs" data-bs-toggle="modal" data-bs-target="#contactUsModal">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom " id="navProduct" th:href="@{addProduct}">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom " id="navLogin" th:href="@{login}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div th:fragment="menuModal" id="contactUsModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form onsubmit="event.preventDefault(); contactUsSubmit()" autocomplete="off">
+                <div class="modal-header modal-header-custom">
+                    <div>
+                        <h5 class="modal-title">Contact Us</h5>
+                        <p>Feel free to drop us a line below!</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-body-custom">
+                    <div class="mb-3">
+                        <label for="contactUsName" class="form-label">Name</label>
+                        <input type="text" class="form-control form-contactus-custom" id="contactUsName" placeholder="please enter your name here" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactUsEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control form-contactus-custom" id="contactUsEmail" placeholder="name@example.com" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactUsMessage" class="form-label">Please give me your feedback</label>
+                        <textarea class="form-control form-contactus-custom" id="contactUsMessage" rows="3" ></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

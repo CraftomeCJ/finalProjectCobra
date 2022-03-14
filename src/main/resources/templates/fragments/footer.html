@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<footer th:fragment="navbar" class="page-footer">
+    <div class="footer-container">
+        <div class="footer-first-row">
+            <ul class="navbar-nav footer-navbar-nav">
+                <li class="nav-item footer-nav-item">
+                    <a class="nav-link footer-nav-link" id="footerHome" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item footer-nav-item">
+                    <a class="nav-link footer-nav-link" id="footerAboutUs" href="#">About Us</a>
+                </li>
+                <li class="nav-item footer-nav-item">
+                    <a class="nav-link footer-nav-link" id="footerShop" href="#">Shop</a>
+                </li>
+                <li class="nav-item footer-nav-item">
+                    <a class="nav-link footer-nav-link" id="footerContactUs" data-bs-toggle="modal" data-bs-target="#contactUsModal">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-second-row">
+            <div class="follow-us">
+                <P>Follow Us</P>
+            </div>
+            <div class="follow-logo">
+                <ul class="navbar-nav logo-navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link logo-nav-link" href="#"><img class="facebook-logo" src="images/facebook.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logo-nav-link" href="#"><img class="instagram-logo" src="images/instagram.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logo-nav-link" href="#"><img class="linkedIn-logo" src="images/linkedin.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logo-nav-link "href="#"><img class="twitter-logo" src="images/twitter.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logo-nav-link "href="#"><img class="youtube-logo" src="images/youtube.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logo-nav-link"href="#"><img class="tiktok-logo" src="images/tiktok.svg" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-third-row">
+            <div class="copyright">
+                <P>&copy2022 Cobra. All  right reserved.</P>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
