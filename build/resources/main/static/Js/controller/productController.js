@@ -20,7 +20,7 @@ class productController {
         formData.append('imagefile',imageObject);
 
 
-        fetch('http://localhost:8080/item/add', {
+        fetch('https://finalprojectcobra.herokuapp.com/item/add', {
             method: 'POST',
             body: formData
         }).then(function (response) {
@@ -39,7 +39,7 @@ class productController {
         let productController = this;
         productController._items = [];
 
-        fetch('http://localhost:8080/item/random')
+        fetch('https://finalprojectcobra.herokuapp.com/item/random')
             .then((resp) => resp.json())
             .then(function (data) {
                 data.forEach(function (item, index) {
@@ -62,7 +62,7 @@ class productController {
     displayProduct() {
         let productController = this;
         productController._items = [];
-        const url ='http://localhost:8080/item/all';
+        const url ='https://finalprojectcobra.herokuapp.com/item/all';
         productController.dataFetch(url);
 
     }
@@ -71,7 +71,7 @@ class productController {
     searchProduct(searchData){
         const productController = this;
         productController._items = [];
-        const url = `http://localhost:8080/item/search/${searchData}`;
+        const url = `https://finalprojectcobra.herokuapp.com/search/${searchData}`;
         productController.dataFetch(url);
     }
 
@@ -79,7 +79,7 @@ class productController {
     displayBy(localStorageData) {
         const productController = this;
         productController._items = [];
-        const url = `http://localhost:8080/item/${localStorageData}`;
+        const url = `https://finalprojectcobra.herokuapp.com/item/${localStorageData}`;
         productController.dataFetch(url)
 
     }
@@ -89,21 +89,21 @@ class productController {
         const productController = this;
         productController._items = [];
         if(filterCharacter === "" && filterColor ==="" ) {
-            const url = `http://localhost:8080/item/all`;
+            const url = `https://finalprojectcobra.herokuapp.com/item/all`;
             productController.dataFetch(url, sort)
             return
         }
         if(filterCharacter === ""){
-            const url = `http://localhost:8080/item/findItemByColor/${filterColor}`;
+            const url = `https://finalprojectcobra.herokuapp.com/item/findItemByColor/${filterColor}`;
             productController.dataFetch(url, sort)
             return;
         }
         if(filterColor === "") {
-            const url = `http://localhost:8080/item/findItemByCharacter/${filterCharacter}`;
+            const url = `https://finalprojectcobra.herokuapp.com/item/findItemByCharacter/${filterCharacter}`;
             productController.dataFetch(url, sort)
             return;
         }
-        const url = `http://localhost:8080/item/${filterCharacter}/${filterColor}`;
+        const url = `https://finalprojectcobra.herokuapp.com/item/${filterCharacter}/${filterColor}`;
         productController.dataFetch(url, sort)
 
 

@@ -8,7 +8,7 @@ class characterController{
     addCharacter(newCharacterName) {
         const formData = new FormData();
         formData.append('characterName', newCharacterName)
-        fetch('http://localhost:8080/character/add', {
+        fetch('https://finalprojectcobra.herokuapp.com/character/add', {
             method: 'POST',
             body: formData
         }).then(function (response) {
@@ -35,7 +35,7 @@ class characterController{
 
     deleteCharacter(deleteCharacterName){
 
-        fetch(`http://localhost:8080/character/${deleteCharacterName}`, {
+        fetch(`https://finalprojectcobra.herokuapp.com/character/${deleteCharacterName}`, {
             method : 'DELETE'
         }).then(function (response) {
             console.log(response.status); // Will show you the status
@@ -54,7 +54,7 @@ class characterController{
         let characterController = this;
         characterController._characterList = [];
 
-        fetch('http://localhost:8080/character/all')
+        fetch('https://finalprojectcobra.herokuapp.com/character/all')
             .then((resp) => resp.json())
             .then(function (data) {
                 data.forEach(function (character, index) {
@@ -76,7 +76,7 @@ class characterController{
         let characterController = this;
         characterController._characterList = [];
 
-        fetch('http://localhost:8080/character/all')
+        fetch('https://finalprojectcobra.herokuapp.com/character/all')
             .then((resp) => resp.json())
             .then(function (data) {
                 data.forEach(function (character, index) {

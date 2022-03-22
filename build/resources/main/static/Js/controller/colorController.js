@@ -8,7 +8,7 @@ class colorController {
     addColor(newColorName){
         const formData = new FormData();
         formData.append('colorName', newColorName)
-        fetch('http://localhost:8080/color/add', {
+        fetch('https://finalprojectcobra.herokuapp.com/color/add', {
             method: 'POST',
             body: formData
         }).then(function (response) {
@@ -46,7 +46,7 @@ class colorController {
 
     deleteColor(deleteColorName){
 
-        fetch(`http://localhost:8080/color/${deleteColorName}`, {
+        fetch(`https://finalprojectcobra.herokuapp.com/color/${deleteColorName}`, {
             method : 'DELETE'
         }).then(function (response) {
             console.log(response.status); // Will show you the status
@@ -64,7 +64,7 @@ class colorController {
         let colorController = this;
         colorController._colorList = [];
 
-        fetch('http://localhost:8080/color/all')
+        fetch('https://finalprojectcobra.herokuapp.com/color/all')
             .then((resp) => resp.json())
             .then(function (data) {
                 data.forEach(function (color, index) {
@@ -86,7 +86,7 @@ class colorController {
         let colorController = this;
         colorController._colorList = [];
 
-        fetch('http://localhost:8080/color/all')
+        fetch('https://finalprojectcobra.herokuapp.com/color/all')
             .then((resp) => resp.json())
             .then(function (data) {
                 data.forEach(function (color, index) {
