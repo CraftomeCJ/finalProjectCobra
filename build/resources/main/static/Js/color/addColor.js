@@ -44,6 +44,9 @@ document.querySelector("#btnAddNewColor").addEventListener('click',function(){
     document.querySelector("#newColorName").value ="";
     document.querySelector("#addNewColor").style.display = "block";
     document.querySelector("#deleteColor").style.display = "none";
+    document.querySelector("#addColorSubmit").style.display = "block";
+    document.querySelector("#deleteColorSubmit").style.display = "none";
+
 })
 document.querySelector("#btnDeleteColor").addEventListener('click',function(){
     addDeleteColorStatus = "delete";
@@ -54,4 +57,6 @@ document.querySelector("#btnDeleteColor").addEventListener('click',function(){
     document.querySelector("#colorErrorMassage").innerHTML = "";
     document.querySelector("#addNewColor").style.display = "none";
     document.querySelector("#deleteColor").style.display = "block";
+    document.querySelector("#addColorSubmit").style.display = "none";
+    document.querySelector("#deleteColorSubmit").style.display = "block";
 })

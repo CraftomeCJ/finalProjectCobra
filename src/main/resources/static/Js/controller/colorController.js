@@ -8,7 +8,7 @@ class colorController {
     addColor(newColorName){
         const formData = new FormData();
         formData.append('colorName', newColorName)
-        fetch('http://localhost:8080/color/add', {
+        fetch('https://finalprojectcobra.herokuapp.com/color/add', {
             method: 'POST',
             body: formData
         }).then(function (response) {
@@ -24,6 +24,7 @@ class colorController {
     }
 
     findColorById(deleteColorId){
+        deleteColorId = parseInt(deleteColorId);
         let size = 0;
         this._colorList.forEach(item =>{
             if(item.id === deleteColorId){
@@ -45,7 +46,7 @@ class colorController {
 
     deleteColor(deleteColorName){
 
-        fetch(`http://localhost:8080/color/${deleteColorName}`, {
+        fetch(`https://finalprojectcobra.herokuapp.com/color/${deleteColorName}`, {
             method : 'DELETE'
         }).then(function (response) {
             console.log(response.status); // Will show you the status
@@ -60,10 +61,10 @@ class colorController {
     }
 
     displayColor() {
-        let productController = this;
-        productController._colorList = [];
+        let colorController = this;
+        colorController._colorList = [];
 
-        fetch('http://localhost:8080/color/all')
+        fetch('https://finalprojectcobra.herokuapp.com/color/all')
             .then((resp) => resp.json())
             .then(function (data) {
                 data.forEach(function (color, index) {
@@ -72,13 +73,35 @@ class colorController {
                         colorName: color.colorName,
                         item: color.item
                     };
-                    productController._colorList.push(colorObj);
+                    colorController._colorList.push(colorObj);
                 });
-                productController.renderColor()
+                colorController.renderColor()
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
+
+    filterColor() {
+        let colorController = this;
+        colorController._colorList = [];
+
+        fetch('https://finalprojectcobra.herokuapp.com/color/all')
+            .then((resp) => resp.json())
+            .then(function (data) {
+                data.forEach(function (color, index) {
+                    const colorObj = {
+                        id: color.idColor,
+                        colorName: color.colorName,
+                    };
+                    colorController._colorList.push(colorObj);
+                });
+                colorController.renderFilterColor()
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
 
     renderColor(){
@@ -90,10 +113,16 @@ class colorController {
         this.displayColorList(list2);
     }
 
+    renderFilterColor(){
+        const list1 = document.querySelector("#filterColor");
+        list1.innerHTML = "";
+        this.displayFilterColorList(list1);
+    }
+
     displayColorList(select){
         let option;
         option = document.createElement('option');
-        option.text = "Select Color";
+        option.text = "Select A Color";
         option.value = "";
         select.add(option);
         this._colorList.forEach(item =>{
@@ -102,7 +131,21 @@ class colorController {
             option.value=item.id;
             select.add(option);
         });
-
     }
+
+    displayFilterColorList(select) {
+        let option;
+        option = document.createElement('option');
+        option.text = "Filter By Color";
+        option.value = "";
+        select.add(option);
+        this._colorList.forEach(item =>{
+            option = document.createElement('option');
+            option.text=item.colorName;
+            option.value=item.id;
+            select.add(option);
+        })
+    }
+
 
 }

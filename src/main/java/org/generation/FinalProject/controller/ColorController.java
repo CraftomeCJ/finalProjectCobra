@@ -21,7 +21,9 @@ public class ColorController {
 
     @CrossOrigin
     @GetMapping("/all")
-    public Iterable<Color>getColor() { return colorService.all(); }
+    public Iterable<Color>getColor() {
+        return colorService.all();
+    }
 
     @CrossOrigin
     @GetMapping("/{id}")

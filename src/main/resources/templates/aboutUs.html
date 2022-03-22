@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/aboutUs.css" />
+    <title>About Us</title>
+</head>
+<body>
+
+    <!---------Navigation bar------------>
+    <div th:insert="fragments/navbar.html :: navbar"></div>
+    <!-----------Contact Us-------------->
+    <div th:insert="fragments/navbar.html :: menuModal"></div>
+
+    <!----------- Header ---------------->
+    <section>
+        <div class="aboutUs">
+            <h1></h1>
+            <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="./images/mainintro.jpg" alt="main" class="responsive" />
+                    </div>
+                    <div class="grid-item">
+                        <p>Our story begins in 2022 along the heritage market. To create a warm, nice and lovely handmade doll.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!--------- Team introduction -------->
+    <section>
+        <div class="container-fluid lg-3 mb-6">
+            <div class="row my-flex-card">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Card Component -->
+                    <div class="card-block" style="width: auto;">
+                        <img src="images/rickphoto.jpg" class="card-img-top" alt="Rick">
+                        <div class="card-body">
+                            <h5 class="card-title">Rick Yeo Yang Yuan</h5>
+                            <p class="card-text">Love sport, outdoor activities. Become a learner of JSFD program this year, so excited to build web page with my team, hope to continue learning and become professional Full Stack Developer</p>
+                            <div class="profileLink">
+                                <a class="nav-link" href="https://github.com/RickYeo" target="_blank"><img class="github-logo" src="/images/githublogo.png" alt=""></a>
+                                <a class="nav-link" href="https://www.linkedin.com/in/rick-yeo-29292222b/" target="_blank"><img class="linkedIn-logo" src="images/linkedin.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Card Component -->
+                    <div class="card-block" style="width: auto;">
+                        <img src="./images/faizalphoto.jpeg" class="card-img-top" alt="Faizal">
+                        <div class="card-body">
+                            <h5 class="card-title">Faizal Bin Jasmuri</h5>
+                            <p class="card-text">A creative and adaptive designer with comprehensive experience in various
+                                industries, namely in Healthcare and Management, with experience in leadership
+                                positions</p>
+                            <div class="profileLink">
+                                <a class="nav-link" href="https://github.com/Crxjester" target="_blank"><img class="github-logo" src="images/githublogo.png" alt=""></a>
+                                <a class="nav-link" href="www.linkedin.com/in/faizaljasmuri" target="_blank"><img class="linkedIn-logo" src="images/linkedin.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Card Component -->
+                    <div class="card-block" style="width: auto;">
+                        <img src="images/weiliphoto.jpg" class="card-img-top" alt="Wei Li">
+                        <div class="card-body">
+                            <h5 class="card-title">Wang Wei Li</h5>
+                            <p class="card-text">I am intrigued by this GetReadySG program which enables me to gain knowledge of both front-end and back-end of software which I hope to contribute extensively to my future employments. During my free time, I love to spend time with my beloved pet dog – Coffee – which is named after my favorite drink</p>
+                            <div class="profileLink">
+                                <a class="nav-link" href="https://github.com/WillyWangwl" target="_blank"><img class="github-logo" src="images/githublogo.png" alt=""></a>
+                                <a class="nav-link" href="https://www.linkedin.com/in/wei-li-wang-84b016230/" target="_blank"><img class="linkedIn-logo" src="images/linkedin.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Card Component -->
+                    <div class="card-block" style="width: auto">
+                        <img src="images/cj_photo1.jpg" class="card-img-top" alt="CJ">
+                        <div class="card-body">
+                            <h5 class="card-title">Christophe Javier Ho</h5>
+                            <p class="card-text">From Albert Einstein: "Wisdom is not a product of schooling but of
+                                the lifelong attempt to acquire it"
+                                Hi, My name is Christophe Javier Ho, others call me CJ,
+                                and I’m looking for my next big challenge to utilise my technical skills.</p>
+                            <div class="profileLink">
+                                <a class="nav-link" href="https://github.com/CraftomeCJ" target="_blank"><img class="github-logo" src="images/githublogo.png" alt=""></a>
+                                <a class="nav-link" href="https://www.linkedin.com/in/cj-ho/" target="_blank"><img class="linkedIn-logo" src="images/linkedin.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-----------Back To Top------------->
+    <div th:insert="fragments/footer.html :: topBtn"></div>
+
+    <!------------Footer------------------>
+    <div th:insert="fragments/footer.html :: footer"></div>
+
+    <!---Java Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="Js/main.js"></script>
+    <script src="Js/contactUs.js"></script>
+    <script src="Js/emptychecking.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 300;
+    color: #000;
+    box-sizing: border-box;
+}
+
+div.aboutUs {
+    width: auto;
+    margin:auto;
+    border: 3px hidden #000;
+    font-size: 25px;
+}
+
+
+.grid-container {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 8rem;
+    max-width: auto;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.grid-item > p {
+    margin-left: 3rem;
+    max-width: auto;
+}
+
+.card {
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+}
+
+.my-flex-card > div > div.card {
+    height: cal(100% - 15px);
+    margin-bottom: 15px;
+}
+
+.profileLink {
+    display: flex;
+}
+
+.card-title {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+
+.card-text {
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 992px) 
+{
+    .grid-container {
+        display: block;
+    }
+    
+    .grid-item > p {
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 720px)
+{
+    .grid-item > p {
+        font-size: smaller;
+    }
+}

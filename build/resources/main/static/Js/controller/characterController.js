@@ -51,8 +51,8 @@ class characterController{
 
     displayCharacter() {
 
-        let productController = this;
-        productController._characterList = [];
+        let characterController = this;
+        characterController._characterList = [];
 
         fetch('http://localhost:8080/character/all')
             .then((resp) => resp.json())
@@ -63,13 +63,35 @@ class characterController{
                         characterName: character.characterName,
                         item: character.item
                     };
-                    productController._characterList.push(characterObj);
+                    characterController._characterList.push(characterObj);
                 });
-                productController.renderCharacter()
+                characterController.renderCharacter()
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
+
+    filterCharacter() {
+        let characterController = this;
+        characterController._characterList = [];
+
+        fetch('http://localhost:8080/character/all')
+            .then((resp) => resp.json())
+            .then(function (data) {
+                data.forEach(function (character, index) {
+                    const characterObj = {
+                        id: character.idCharacter,
+                        characterName: character.characterName,
+                    };
+                    characterController._characterList.push(characterObj);
+                });
+                characterController.renderFilterCharacter()
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
 
     renderCharacter() {
@@ -81,10 +103,16 @@ class characterController{
         this.displayCharacterList(list2);
     }
 
+    renderFilterCharacter () {
+        const list1 = document.querySelector("#filterCharacter");
+        list1.innerHTML = "";
+        this.displayFilterCharacterList(list1);
+    }
+
     displayCharacterList(select){
         let option;
         option = document.createElement('option');
-        option.text = "Select Character";
+        option.text = "Select A Character";
         option.value = "";
         select.add(option);
         this._characterList.forEach(item =>{
@@ -94,4 +122,19 @@ class characterController{
             select.add(option);
         });
     }
+
+    displayFilterCharacterList(select) {
+        let option;
+        option = document.createElement('option');
+        option.text = "Filter By Character";
+        option.value = "";
+        select.add(option);
+        this._characterList.forEach(item => {
+            option = document.createElement('option');
+            option.text = item.characterName;
+            option.value = item.id;
+            select.add(option);
+        });
+    }
+
 }

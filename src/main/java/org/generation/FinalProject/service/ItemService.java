@@ -14,5 +14,24 @@ public interface ItemService {
 
     Item findById ( int itemId );
 
+    List<Item> search(String keyword);
+
+    List<Item> randomItem();
+
+    List<Item> newItem();
+
+    List<Item> hotItem();
+
+    List<Item> topRatedItem();
+
+    List<Item> discountItem();
+
+    List<Item> findAllByIdCharacterIs(int idCharacter);
+
+    List<Item> findAllByIdColorIs(int idColor);
+
+    List<Item> findAllByIdCharacterIsAndIdColorIs( int idCharacter, int idColor );
+
+
 
 }

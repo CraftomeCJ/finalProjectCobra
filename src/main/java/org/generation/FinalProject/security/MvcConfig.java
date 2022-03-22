@@ -19,9 +19,14 @@ public class MvcConfig implements WebMvcConfigurer{
 
     // setting up link to open the page
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("login");
-        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/").setViewName("home");
+        registry.addViewController("/home").setViewName("home");
+        registry.addViewController("/aboutUs").setViewName("aboutUs");
+        registry.addViewController("/products").setViewName("products");
         registry.addViewController("/addProduct").setViewName("addProduct");
+        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/logout").setViewName("home");
+
 
     }
 

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Google style-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Home</title>
+</head>
+<body>
+
+<!---------Navigation bar------------>
+<div th:insert="fragments/navbar.html :: navbar"></div>
+<!-----------Contact Us-------------->
+<div th:insert="fragments/navbar.html :: menuModal"></div>
+
+
+<!---------Carousel------------>
+<div class="container">
+    <div id="imgSlides" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#imgSlides" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#imgSlides" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#imgSlides" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/harryp.jpeg" class="d-block w-100" alt="harryp">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Harry Potter Collection</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/ilama.jpeg" class="d-block w-100" alt="ilama">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ilama Doll</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/cow.jpeg" class="d-block w-100" alt="cow.">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Cow Doll</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#imgSlides" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imgSlides" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!---------End of Carousel------------>
+
+
+<!---------Offer Section------------>
+<section class="offers">
+    <main class="offerContainer">
+        <div class="row offRow">
+            <!-- Offer Box One -->
+            <div class="offerItem">
+                <a th:href="@{products}" onclick="javascript:saveToLocal('displayBy','newProduct')" >
+                    <div class="offer-box text-center position-relative">
+                        <div class="offer-inner">
+                            <div class="offer-image position-relative overflow-hidden">
+                                <img src="images/displayImage/IMG_1174.JPEG" alt="Offers" class="img-fluid">
+                                <div class="offer-overlay"></div>
+                            </div>
+                            <div class="offer-info">
+                                <div class="offer-info-inner">
+                                    <p class="heading-bigger text-capitalize">NEW PRODUCT</p>
+                                    <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                                    <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Buy Now!!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Offer Box Two -->
+            <div class="offerItem">
+                <a th:href="@{products}" onclick="javascript:saveToLocal('displayBy','hotProduct')" >
+                    <div class="offer-box text-center position-relative">
+                        <div class="offer-inner">
+                            <div class="offer-image position-relative overflow-hidden">
+                                <img src="images/displayImage/IMG_1131.JPEG" alt="Offers" class="img-fluid">
+                                <div class="offer-overlay"></div>
+                            </div>
+                            <div class="offer-info">
+                                <div class="offer-info-inner">
+                                    <p class="heading-bigger text-capitalize">BEST SELLING</p>
+                                    <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                                    <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Buy Now!!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Offer Box Three -->
+            <div class="offerItem">
+                <a th:href="@{products}" onclick="javascript:saveToLocal('displayBy','topRatedProduct')" >
+                    <div class="offer-box text-center position-relative">
+                        <div class="offer-inner">
+                            <div class="offer-image position-relative overflow-hidden">
+                                <img src="images/displayImage/IMG_1124.JPEG" alt="Offers" class="img-fluid">
+                                <div class="offer-overlay"></div>
+                            </div>
+                            <div class="offer-info">
+                                <div class="offer-info-inner">
+                                    <p class="heading-bigger text-capitalize">TOP RATED</p>
+                                    <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                                    <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Buy Now!!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Offer Box Four -->
+            <div class="offerItem">
+                <a th:href="@{products}" onclick="javascript:saveToLocal('displayBy','discountProduct')" >
+                    <div class="offer-box text-center position-relative">
+                        <div class="offer-inner">
+                            <div class="offer-image position-relative overflow-hidden threeInOneImage">
+                                <img src="images/displayImage/IMG_1171.png" alt="Offers" class="img-fluid overSizeImage">
+                                <div class="offer-overlay"></div>
+                            </div>
+                            <div class="offer-info">
+                                <div class="offer-info-inner">
+                                    <p class="heading-bigger text-capitalize">Sale 50%</p>
+                                    <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                                    <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Buy Now!!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--                &lt;!&ndash; Offer Box Five &ndash;&gt;-->
+            <!--                <div class="col-sm-6 col-lg-4 mb-lg-2 mb-4">-->
+            <!--                    <a th:href="@{products}" onclick="javascript:saveToLocal('displayBy','discountProduct')" >-->
+            <!--                        <div class="offer-box text-center position-relative">-->
+            <!--                            <div class="offer-inner">-->
+            <!--                                <div class="offer-image position-relative overflow-hidden">-->
+            <!--                                    <img src="images/displayImage/IMG_1176.JPEG" alt="Offers" class="img-fluid">-->
+            <!--                                    <div class="offer-overlay"></div>-->
+            <!--                                </div>-->
+            <!--                                <div class="offer-info">-->
+            <!--                                    <div class="offer-info-inner">-->
+            <!--                                        <p class="heading-bigger text-capitalize">Sale 50%</p>-->
+            <!--                                        <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>-->
+            <!--                                        <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Buy Now!!</button>-->
+            <!--                                    </div>-->
+            <!--                                </div>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
+            <!--                </div>-->
+
+            <!--                &lt;!&ndash; Offer Box Six &ndash;&gt;-->
+            <!--                <div class="col-sm-6 col-lg-4 mb-lg-2 mb-4">-->
+            <!--                    <a th:href="@{products}" onclick="javascript:saveToLocal('displayBy','discountProduct')" >-->
+            <!--                        <div class="offer-box text-center position-relative">-->
+            <!--                            <div class="offer-inner">-->
+            <!--                                <div class="offer-image position-relative overflow-hidden">-->
+            <!--                                    <img src="images/displayImage/IMG_1064.JPEG" alt="Offers" class="img-fluid">-->
+            <!--                                    <div class="offer-overlay"></div>-->
+            <!--                                </div>-->
+            <!--                                <div class="offer-info">-->
+            <!--                                    <div class="offer-info-inner">-->
+            <!--                                        <p class="heading-bigger text-capitalize">Sale 50%</p>-->
+            <!--                                        <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>-->
+            <!--                                        <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Buy Now!!</button>-->
+            <!--                                    </div>-->
+            <!--                                </div>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
+            <!--                </div>-->
+        </div>
+    </main>
+</section>
+<!---------End of Offer Section------------>
+
+
+<!---------Product Lists------------>
+<div class="container-fluid">
+    <div class="card-columns" id="cardColumn">
+        <!-- From SQL-->
+    </div>
+</div>
+<!---------End of Product Lists------------>
+
+<!-----------Back To Top------------->
+<div th:insert="fragments/footer.html :: topBtn"></div>
+<!-----------Footer------------------>
+<div th:insert="fragments/footer.html :: footer"></div>
+
+
+<!---Java Script-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="Js/controller/productController.js"></script>
+<script src="Js/product/homeProductListing.js"></script>
+<script src="Js/home.js"></script>
+<script src="Js/main.js"></script>
+<script src="Js/contactUs.js"></script>
+<script src="Js/emptychecking.js"></script>
+
+</body>
+</html>

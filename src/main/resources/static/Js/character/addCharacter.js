@@ -37,6 +37,8 @@ document.querySelector("#btnAddNewCharacter").addEventListener('click',function(
     document.querySelector("#newCharacterName").value ="";
     document.querySelector("#addNewCharacter").style.display = "block";
     document.querySelector("#deleteCharacter").style.display = "none";
+    document.querySelector("#addCharacterSubmit").style.display = "block";
+    document.querySelector("#deleteCharacterSubmit").style.display = "none";
 })
 document.querySelector("#btnDeleteCharacter").addEventListener('click',function(){
     addDeleteCharacterStatus = "delete";
@@ -47,4 +49,6 @@ document.querySelector("#btnDeleteCharacter").addEventListener('click',function(
     document.querySelector("#characterErrorMassage").innerHTML = "";
     document.querySelector("#addNewCharacter").style.display = "none";
     document.querySelector("#deleteCharacter").style.display = "block";
+    document.querySelector("#addCharacterSubmit").style.display = "none";
+    document.querySelector("#deleteCharacterSubmit").style.display = "block";
 })

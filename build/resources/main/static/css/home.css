@@ -1,0 +1,232 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.offerContainer{
+    max-width: 1200px;
+    padding: 10px 10px;
+    margin: 0 auto;
+}
+
+/* Offer CSS */
+.offers{
+    padding-top:8rem;
+    padding-bottom:8rem;
+}
+.offers .offer-box .offer-image::before{
+    position:absolute;
+    content:'';
+    top:0;
+    left:-100%;
+    z-index: 2;
+    display:block;
+    width:50%;
+    height:100%;
+    background:-webkit-linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+    background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+    transform:skewX(-25deg);
+}
+.offers .offer-box .offer-image img{
+    transform:scale(1.02);
+    width:100%;
+    height:100%;
+}
+.offers .offer-box:hover .offer-image::before{
+    animation:effect_shine 1s;
+}
+@keyframes effect_shine{
+    100%{
+        left:150%;
+    }
+}
+.offers .offer-overlay::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    z-index: 1;
+}
+.offers .offer-box .offer-info{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    z-index: 1;
+    transition:all 250ms ease-out;
+    justify-content:center;
+    align-items:center;
+}
+.offers .offer-box .offer-info .heading-bigger{
+    font-size: 4.375rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom:0;
+    color:white;
+}
+.offers .offer-box .offer-info .offer-title-1{
+    color:white;
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin-bottom: 0;
+    letter-spacing:2px;
+}
+.offers .offer-box .offer-info .btn-outline-danger{
+    color:white;
+    border-color:white;
+    transition:all 0.3s ease-in-out;
+}
+.offers .offer-box .offer-info .btn-outline-danger:hover {
+    border-color: red;
+    background-color: red;
+}
+.card {
+    break-inside:avoid ;
+}
+/*
+    Update 18.3
+*/
+.card::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,.2);
+    border-radius: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.card:hover {
+    opacity: 1;
+    -webkit-animation: flash 1.5s;
+    animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.offRow{
+    display: flex;
+    flex-wrap: wrap;
+    margin : 0 auto;
+}
+.offerItem {
+    flex-grow: 1;
+    width: 33.33%;
+    break-inside:avoid ;
+    box-sizing: border-box;
+    max-height: 360px;
+    padding: 5px;
+}
+.offer-box, .offer-inner, .offer-image, .offer-image > img  {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.threeInOneImage{
+    display: flex;
+}
+.overSizeImage {
+    object-fit: cover;
+}
+@media (max-width: 1000px) {
+    .offerItem {
+        min-width: 50%;
+    }
+}
+@media (max-width: 720px) {
+    .offerItem {
+        height: 100%;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .offers .offer-box .offer-info .heading-bigger{
+        font-size: 3.75rem;;
+    }
+    .offers .offer-box .offer-info .offer-title-1{
+        font-size: 1.0rem;
+    }
+    .offerItem {
+        min-width: 100%;
+        height: auto;
+        max-height: 360px;
+    }
+}
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+    .offers .offer-box .offer-info .heading-bigger{
+        font-size: 3.75rem;;
+    }
+    .offers .offer-box .offer-info .offer-title-1{
+        font-size: 1.0rem;
+    }
+}
+@media (min-width: 768px) {
+    .card-columns {
+         column-count: 3;
+    }
+    .offers .offer-box .offer-info .heading-bigger{
+        font-size: 3.75rem;;
+    }
+    .offers .offer-box .offer-info .offer-title-1{
+        font-size: 1.0rem;
+    }
+}
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 4;
+    }
+    .offers .offer-box .offer-info .heading-bigger{
+        font-size: 3.75rem;;
+    }
+}
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 5;
+    }
+    .offers .offer-box .offer-info .heading-bigger{
+        font-size: 4.375rem;
+        font-weight: 400;
+    }
+    .offers .offer-box .offer-info .offer-title-1{
+        font-size: 1.125rem;
+        font-weight: 300;
+    }
+}
