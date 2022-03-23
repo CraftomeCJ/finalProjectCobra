@@ -137,7 +137,7 @@ Users should be able to:
 * About Us Page 
   * Users should be able to see the About Us page.
 
-*ContactUs Page
+* ContactUs Page
   * Users should be able to contact us.  
 
 * Login Page
