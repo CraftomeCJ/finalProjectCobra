@@ -72,7 +72,7 @@ Implement a fully working web application with the following layers:
 * Deployment: Wednesday, March 23rd, 2022
 * Presentation: Wednesday, March 30th, 2022
 ### Links
-  > Live demo: [_Cobra_]https://finalprojectcobra.herokuapp.com/ 
+  > Live demo: [_Cobra_] https://finalprojectcobra.herokuapp.com/ 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
@@ -148,7 +148,7 @@ Users should be able to:
 
 ## Screenshots
 
-![Homepage Feature I](./images/homepage_feature1)
+![Homepage Feature I](./src/main/resources/static/images/homepage_feature1)
 ![Homepage Feature II](./images/homepage_feature2)
 ![Homepage Feature III](./images/homepage_feature3)
 ![Product page Feature I](./images/productpage_feature)
