@@ -129,7 +129,7 @@ Users should be enjoyed to:
   3. Users should be able to see the special offer and the product that is being offered.
 
 * Home.html 
-**(IMPORTANT for 2, 3, 4, 5, will display different kind of product)**
+**(IMPORTANT for ii, iii, iv, v, will display different kind of product)**
   1. Carousel
   2. New Product – Display latest 10 product that enter ( last 10 from database )
   3. Best Selling – Display top 10 bestselling product ( 10 lowest Price from database )
