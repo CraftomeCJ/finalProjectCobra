@@ -148,13 +148,13 @@ Users should be able to:
 
 ## Screenshots
 
-![Homepage Feature I](./screenshots/homepage_feature1)
-![Homepage Feature II](./screenshots/homepage_feature2)
-![Homepage Feature III](./screenshots/homepage_feature3)
-![Product page Feature I](./screenshots/productpage_feature)
-![Product page Feature II](./screenshots/productpage_feature2)
-![ContactUs page Feature](./screenshots/contactuspage_feature)
-![Login page Feature](./screenshots/formpage_feature)
+![Homepage Feature I](./screenshots/homepage_feature1.png)
+![Homepage Feature II](./screenshots/homepage_feature2.png)
+![Homepage Feature III](./screenshots/homepage_feature3.png)
+![Product page Feature I](./screenshots/productpage_feature.png)
+![Product page Feature II](./screenshots/productpage_feature2.png)
+![ContactUs page Feature](./screenshots/contactuspage_feature.png)
+![Login page Feature](./screenshots/formpage_feature.png)
 ![Add Product page Feature](./screenshots/addproductpage_feature.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 ## Project Status
