@@ -111,40 +111,59 @@ Implement a fully working web application with the following layers:
 * Heroku
 
 ## Features
-Users should be able to:
+Users should be enjoyed to:
 
 * User-Friendly
-  * This comes from the old K.I.S.S. adage about keeping it simple.
+  1. This comes from the old K.I.S.S. adage about keeping it simple.
 
 * Mobile-Friendly Website
-  * With a responsive website, content intuitively adapts to whatever device is accessing it to provide the most user-friendly experience.
+  1. With a responsive website, content intuitively adapts to whatever device is accessing it to provide the most user-friendly experience.
 
 * High-Resolution Photos
-  * Gone are the days of posting one photo with a few bullet points and a price tag.
-  * Users should see to be able to zoom in and get a feel for the product.  
+  1. Gone are the days of posting one photo with a few bullet points and a price tag.
+  2. Users should to be able to zoom in and get a feel for the product.  
 
 * Special Offers
-  * Users should be able to see special offers that are available for a limited time.
-  * Users should be able to see the special offer and the product that is being offered.
-  * Users should be able to see the special offer and the product that is being offered.
+  1. Users should be able to see special offers that are available for a limited time.
+  2. Users should be able to see the special offer and the product that is being offered.
+  3. Users should be able to see the special offer and the product that is being offered.
 
-* Product Page
-  * Users should be able to see product details to explain what your product is when they click on the product.
+* Home.html 
+**(IMPORTANT for 2, 3, 4, 5, will display different kind of product)**
+  1. Carousel
+  2. New Product – Display latest 10 product that enter ( last 10 from database )
+  3. Best Selling – Display top 10 bestselling product ( 10 lowest Price from database )
+  4. Top rated – Display top 10 top rate product ( 10 item from database in idColor Desc )
+  5. Sale 50% – Display discounted item. ( display item from database where idCharacter id =14,17 )
+  6. Masonry item – Random 13 item from Database  
+
+* AddProduct Page
+  1. Users should be able to see product details to explain what your product is when they click on the product
+  2. Color – Read from database, add and delete to/from database. Duplicate color does not allow. Cannot be delete If link with product.
+  3. Character – Read from database, add and delete to/from database. Cannot be delete If link with product.
+  4. Custom empty verification 
+  5. File – picture will be shown after select a file
 
 * Search
-  * Users should be able to search for products by name, category, or price.
+  1. Users should be able to search for products by name, category, or price.
 
 * About Us Page 
-  * Users should be able to see the About Us page.
+  1. Users should be able to see the About Us page.
 
 * ContactUs Page
-  * Users should be able to contact us.  
+  1. Users should be able to contact us.  
 
 * Login Page
-  * Allow user to login
+  1. Allow user to login
 
-* Add Product Page 
-  * Allow user to add products/post  
+* Product Page 
+  1. Sort – product can be display in different kind of method. ( all done in Java using sort method )
+  2. Filter by color – read from database by idColor
+  3. Filter by character - read from database by idCharacter
+  4. Search – search keyword from database where name, description, character, color or price contain the keyword.
+  5. Display detail
+  6. Add to Cart – item can add to cart, ( We are using sessionStorage to store cart item.
+  7. Display cart – display all item in cart, with picture, name, price, QTY ( can be modify ) remove. 
 
 ## Screenshots
 
