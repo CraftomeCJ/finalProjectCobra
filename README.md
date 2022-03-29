@@ -148,14 +148,14 @@ Users should be able to:
 
 ## Screenshots
 
-![Homepage Feature I](./src/main/resources/static/images/homepage_feature1)
-![Homepage Feature II](./images/homepage_feature2)
-![Homepage Feature III](./images/homepage_feature3)
-![Product page Feature I](./images/productpage_feature)
-![Product page Feature II](./images/productpage_feature2)
-![ContactUs page Feature](./images/contactuspage_feature)
-![Login page Feature](./images/formpage_feature)
-![Add Product page Feature](./images/addproductpage_feature)
+![Homepage Feature I](./screenshots/homepage_feature1)
+![Homepage Feature II](./screenshots/homepage_feature2)
+![Homepage Feature III](./screenshots/homepage_feature3)
+![Product page Feature I](./screenshots/productpage_feature)
+![Product page Feature II](./screenshots/productpage_feature2)
+![ContactUs page Feature](./screenshots/contactuspage_feature)
+![Login page Feature](./screenshots/formpage_feature)
+![Add Product page Feature](./screenshots/addproductpage_feature.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 ## Project Status
 Project is: _in progress_ 
