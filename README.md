@@ -126,7 +126,7 @@ Users should be enjoyed to:
 * Special Offers
   1. Users should be able to see special offers that are available for a limited time.
   2. Users should be able to see the special offer and the product that is being offered.
-  3. Users should be able to see the special offer and the product that is being offered.
+  3. Users should be able to see the responsive effects with CSS Gradients and CSS Animations.
 
 * Home.html 
 **(IMPORTANT for ii, iii, iv, v, will display different kind of product)**
@@ -204,6 +204,7 @@ To do:
   * Rick Yeo, our team lead
   * Willy Wang, our team member
   * Faizal Jasmuri, our team member
+
   for their hard work and support.
 
 ## Author
